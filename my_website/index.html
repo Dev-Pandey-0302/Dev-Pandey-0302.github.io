@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #F8F9FA; /* pastel white */
+            color: #333;
+        }
+
+        header {
+            background-color: #FFFFFF; /* white */
+            color: #333;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            background-color: #FFFFFF; /* white */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .content {
+            background: #FFFFFF; /* white */
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #FFFFFF; /* white */
+            color: #333;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <nav>
+        <a href="#visualization">Visualization</a>
+        <a href="#huggingface">Hugging Face Space</a>
+    </nav>
+    <div class="container">
+        <div class="content" id="visualization">
+            <h2>Interactive Visualization</h2>
+            <iframe src="network_with_legend_2.html" width="100%" height="600px" frameborder="0"></iframe>
+        </div>
+        <div class="content" id="huggingface">
+            <h2>Hugging Face Space</h2>
+            <iframe src="https://devis2awe-fin-news-analysis.hf.space" frameborder="0" width="100%" height="450"></iframe>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 My Website. All rights reserved.
+    </footer>
+</body>
+</html>
