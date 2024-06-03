@@ -1,18 +1,12 @@
+<!-- this is an test file not ment for use -->
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* #muteButton {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        } */
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -22,7 +16,6 @@
             background-size: cover;
             background-attachment: fixed;
         }
-
         header {
             background-color: rgba(0, 0, 0, 0.8);
             color: #fff;
@@ -35,7 +28,6 @@
             z-index: 1000;
             font-family: 'Playfair Display', serif;
         }
-
         nav {
             display: flex;
             justify-content: center;
@@ -47,7 +39,6 @@
             width: 100%;
             z-index: 999;
         }
-
         nav a {
             color: #ddd;
             text-decoration: none;
@@ -55,11 +46,9 @@
             font-weight: bold;
             transition: color 0.3s ease;
         }
-
         nav a:hover {
             color: #fff;
         }
-
         .hero {
             display: flex;
             align-items: center;
@@ -70,7 +59,6 @@
             text-align: center;
             position: relative;
         }
-
         .hero::after {
             content: '';
             position: absolute;
@@ -81,7 +69,6 @@
             background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
-
         .hero-content {
             position: absolute;
             top: 50%;
@@ -91,7 +78,6 @@
             text-align: center;
             color: #ffffff;
         }
-
         .hero-content h1 {
             font-size: 4rem;
             margin: 0;
@@ -99,58 +85,49 @@
             animation: fadeInDown 1.5s ease-out;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
-
         .hero-content p {
             font-size: 1.5rem;
             margin: 0.5rem 0 2rem;
             animation: fadeInUp 1.5s ease-out;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
             padding-top: 120px;
         }
-
         h1,
         h2 {
             text-align: center;
             font-family: 'Playfair Display', serif;
             color: #e0e0e0;
         }
-
         h4 {
             text-align: center;
             font-family: 'Playfair Display', serif;
             color: #e0e0e0;
         }
-
         .content {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
@@ -159,12 +136,10 @@
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .content:hover {
             transform: translateY(-10px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
-
         iframe,
         video {
             display: block;
@@ -174,16 +149,13 @@
             width: 100%;
             height: auto;
         }
-
         .large-iframe {
             height: 80vh;
         }
-
         .content-section {
             padding-top: 120px; /* Adjust this value to the height of the header and nav */
             margin-top: -60px;  /* Adjust this value to half of the header and nav height */
         }
-
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -192,149 +164,108 @@
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             font-family: 'Roboto', sans-serif;
         }
-        .container {
-            position: relative;
+        .skills {
+            text-align: center;
+            padding: 2rem 0;
         }
-
-        .logo {
-            position: absolute;
-            top: 1px;
-            right: 16px;
-            font-size: 1px;
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
         }
-
+        .skills li {
+            display: inline-block;
+            margin: 0.5rem 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skills li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 0.5rem;
+            background: #0d0d2b;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background: #333;
+        }
     </style>
-    
-
 </head>
-
 <body>
-    <!-- <audio id="bgmusic" autoplay loop>
-        <source src="The Rising Dawn Bellows Like Thunder.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio> -->
-    
     <header>
-        
-        <a href="#back"><div id="logo">
-            <img src="LOGO_1.png" alt="DP" width="100" height="30">
-
-          </div></a>
+        <a href="#back">
+            <div id="topright">
+                <img src="LOGO_1.png" alt="DP" width="100" height="30">
+            </div>
+        </a>
         <nav>
-            
             <a href="#visualization">Visualization</a>
             <a href="#huggingface">Hugging Face Space</a>
             <a href="#video">Video</a>
             <a href="#viz1717435608654">Tableau Visualization</a>
         </nav>
-        <!-- <div id="muteButton">
-            <button onclick="toggleMute()">Mute</button>
-        </div> -->
-        <!-- <div id="muteButton">
-            <button onclick="toggleMute()">Mute</button>
-        </div> -->
     </header>
-
     <div class="hero" id="back">
         <video autoplay loop muted class="bg-video">
             <source src="bg2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>This is a collection of my personal projects.</p>
-            
+            <h1>Welcome to My Data Science Portfolio</h1>
+            <p>Exploring Data and Uncovering Insights</p>
         </div>
     </div>
-
-
-
     <div class="container">
-
-
-        <div class="content content-section" id="video">
-            <h2>Therapy-Bot: A Therapist Chatbot</h2>
-            <video autoplay loop muted>
-                <source src="Recording%202024-06-02%20010836.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <!-- Skills Section -->
+        <div class="skills" id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>R</li>
+                <li>SQL</li>
+                <li>Machine Learning</li>
+                <li>Data Visualization</li>
+                <li>Deep Learning</li>
+            </ul>
         </div>
-
-
-        <div class="content content-section" id="huggingface">
-            <h2>Stock-Pred: Financial News Analysis</h2>
-            <iframe src="https://devis2awe-fin-news-analysis.hf.space" class="large-iframe" frameborder="0" width="100%" height="1000"></iframe>
+        <!-- Contact Form -->
+        <div class="contact-form" id="contact">
+            <h2>Contact Me</h2>
+            <form action="https://example.com/submit-form" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
-
-
-        <div class="content content-section" id="visualization">
-            <h2>Speach Analysis of Famous Dictators</h2>
-            <iframe src="network_with_legend_2.html" class="large-iframe" frameborder="0" height="2000"></iframe>
-        </div>
-
-
-        <div class='content content-section' id='viz1717435608654' style='position: relative'>
-            <h2>Air Force Bases in South-East Asia</h2>
-            <h4>Mapping of all Major Power's Air Force bases in South-East Asia, namely India, China and the U.S. <br>All nuclear capable bases (bases from which nuclear weapons can be launched) have aslo been mapped for India and China as per public domain knowledge</h4>
-            <h5>Tech Stack: <br>Tableau</h5>
-            <noscript>
-                <a href='#'>
-                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;Airforces_asia&#47;Sheet1&#47;1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
-                <param name='name' value='Airforces_asia&#47;Sheet1' />
-                <param name='tabs' value='yes' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;Airforces_asia&#47;Sheet1&#47;1.png' /> 
-                <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' /><param name='language' value='en-US' />
-                <param name='filter' value='publish=yes' />
-            </object>
-        </div>                
-        <script type='text/javascript'>                    var divElement = document.getElementById('viz1717435608654');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
-
-        </div>
-
-
-
-
-
     </div>
     <footer>
-        &copy; 2024 My Portfolio. All rights reserved.
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
-    <!-- <script>
-        var audio = document.getElementById("bgmusic");
-    
-        function toggleMute() {
-            if (audio.muted) {
-                audio.muted = false;
-                document.getElementById("muteButton").innerHTML = "Mute";
-            } else {
-                audio.muted = true;
-                document.getElementById("muteButton").innerHTML = "Unmute";
-            }
-        }
-        </script> -->
-        <!-- <script>
-            var audio = document.getElementById("bgmusic");
-        
-            function toggleMute() {
-                if (audio.muted) {
-                    audio.muted = false;
-                    document.getElementById("muteButton").innerHTML = "Mute";
-                } else {
-                    audio.muted = true;
-                    document.getElementById("muteButton").innerHTML = "Unmute";
-                }
-            }
-        </script> -->
 </body>
-
 </html>
