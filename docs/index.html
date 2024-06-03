@@ -1,112 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* #muteButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        } */
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #F8F9FA; /* pastel white */
-            color: #333;
+            background-color: #0d0d2b;
+            color: #e0e0e0;
+            background-image: url('https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png');
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         header {
-            background-color: #FFFFFF; /* white */
-            color: #333;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
             padding: 1rem 0;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            font-family: 'Playfair Display', serif;
         }
 
         nav {
             display: flex;
             justify-content: center;
             padding: 1rem 0;
-            background-color: #FFFFFF; /* white */
+            background-color: rgba(0, 0, 0, 0.8);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            z-index: 999;
         }
 
         nav a {
-            color: #555;
+            color: #ddd;
             text-decoration: none;
             margin: 0 1rem;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+            color: #FFFFFF;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            animation: fadeInDown 1.5s ease-out;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin: 0.5rem 0 2rem;
+            animation: fadeInUp 1.5s ease-out;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
+            padding-top: 120px;
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             text-align: center;
+            font-family: 'Playfair Display', serif;
+            color: #e0e0e0;
         }
 
         .content {
-            background: #FFFFFF; /* white */
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        iframe {
-            display: block;
-            margin: 0 auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
 
+        iframe,
         video {
             display: block;
             margin: 0 auto;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 100%;
             height: auto;
+        }
+
+        .large-iframe {
+            height: 80vh;
+        }
+
+        .content-section {
+            padding-top: 120px; /* Adjust this value to the height of the header and nav */
+            margin-top: -60px;  /* Adjust this value to half of the header and nav height */
         }
 
         footer {
             text-align: center;
             padding: 1rem 0;
-            background-color: #FFFFFF; /* white */
-            color: #333;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Roboto', sans-serif;
         }
+        .container {
+            position: relative;
+        }
+
+        .topright {
+            position: absolute;
+            top: 1px;
+            right: 16px;
+            font-size: 1px;
+        }
+
     </style>
+    
+
 </head>
+
 <body>
+    <!-- <audio id="bgmusic" autoplay loop>
+        <source src="docs/The Rising Dawn Bellows Like Thunder.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio> -->
     <header>
-        <h1>Welcome to My Website</h1>
+        
+        <a href="#back"><div id="topright">
+            <img src="LOGO_1.png" alt="DP" width="100" height="30">
+
+          </div></a>
+        <nav>
+            
+            <a href="#visualization">Visualization</a>
+            <a href="#huggingface">Hugging Face Space</a>
+            <a href="#video">Video</a>
+        </nav>
+        <!-- <div id="muteButton">
+            <button onclick="toggleMute()">Mute</button>
+        </div> -->
+          
     </header>
-    <nav>
-        <a href="#visualization">Visualization</a>
-        <a href="#huggingface">Hugging Face Space</a>
-        <a href="#video">Video</a>
-    </nav>
+
+    <div class="hero" id="back">
+        <video autoplay loop muted class="bg-video">
+            <source src="bg2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is a collection of my personal projects.</p>
+            
+        </div>
+    </div>
     <div class="container">
-        <div class="content" id="visualization">
-            <h2>Interactive Visualization</h2>
-            <iframe src="network_with_legend_2.html" width="100%" height="600px" frameborder="0"></iframe>
+        <div class="content content-section" id="visualization">
+            <h2>Speach Analysis of Famous Dictators</h2>
+            <iframe src="network_with_legend_2.html" class="large-iframe" frameborder="0" height="2000"></iframe>
         </div>
-        <div class="content" id="huggingface">
-            <h2>Hugging Face Space</h2>
-            <iframe src="https://devis2awe-fin-news-analysis.hf.space" frameborder="0" width="100%" height="450"></iframe>
+        <div class="content content-section" id="huggingface">
+            <h2>Stock-Pred: Financial News Analysis</h2>
+            <iframe src="https://devis2awe-fin-news-analysis.hf.space" class="large-iframe" frameborder="0" width="100%" height="1000"></iframe>
         </div>
-        <div class="content" id="video">
-            <h2>Featured Video</h2>
+        <div class="content content-section" id="video">
+            <h2>Therapy-Bot: A Therapist Chatbot</h2>
             <video autoplay loop muted>
-                <source src="Recording 2024-06-02 010836.mp4" type="video/mp4">
+                <source src="Recording%202024-06-02%20010836.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
     </div>
     <footer>
-        &copy; 2024 My Website. All rights reserved.
+        &copy; 2024 My Portfolio. All rights reserved.
     </footer>
+    <!-- <script>
+        var audio = document.getElementById("bgmusic");
+    
+        function toggleMute() {
+            if (audio.muted) {
+                audio.muted = false;
+                document.getElementById("muteButton").innerHTML = "Mute";
+            } else {
+                audio.muted = true;
+                document.getElementById("muteButton").innerHTML = "Unmute";
+            }
+        }
+        </script> -->
 </body>
+
 </html>
